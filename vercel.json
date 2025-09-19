@@ -1,26 +1,4 @@
 {
-  "version": 2,
-  "name": "aws-rmm-dashboard",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-  "env": {
-    "NEXT_PUBLIC_APP_NAME": "AWS RMM Hackathon Dashboard",
-    "NEXT_PUBLIC_VERSION": "1.0.0",
-    "NEXT_PUBLIC_DEMO_MODE": "true"
-  },
-  "functions": {
-    "app/**/*.{js,ts}": {
-      "runtime": "@vercel/node@18.x"
-    }
-  }
+  "trailingSlash": true,
+  "outputDirectory": "out"
 }
