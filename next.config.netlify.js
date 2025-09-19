@@ -17,10 +17,7 @@ const nextConfig = {
     NEXT_PUBLIC_VERSION: '1.0.0',
   },
   
-  // Disable server-side features for static export
-  experimental: {
-    appDir: false,
-  },
+  // Static export optimizations
 }
 
 module.exports = nextConfig
