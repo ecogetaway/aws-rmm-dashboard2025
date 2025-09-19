@@ -9,8 +9,6 @@ const nextConfig = {
     unoptimized: true, // Skip image optimization for faster dev builds
   },
   trailingSlash: true,
-  output: 'export',
-  distDir: 'out',
   env: {
     NEXT_PUBLIC_APP_NAME: 'AWS RMM Hackathon',
     NEXT_PUBLIC_VERSION: '1.0.0',
