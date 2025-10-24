@@ -2,7 +2,7 @@
  * Agent API client for REST and WebSocket communication
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_AGENT_API_URL || 'http://localhost:8080';
+const API_BASE_URL = process.env.NEXT_PUBLIC_AGENT_API_URL || 'http://localhost:5001';
 
 export interface InvokeAgentRequest {
   prompt: string;

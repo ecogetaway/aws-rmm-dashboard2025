@@ -65,5 +65,5 @@ echo ""
 
 # Run the application
 cd backend
-python app.py
+python3 app.py
 

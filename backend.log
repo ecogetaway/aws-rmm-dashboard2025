@@ -1,0 +1,39 @@
+🚀 Starting RMM Agent Backend...
+📦 Activating virtual environment...
+📦 Installing dependencies...
+WARNING: The directory '/Users/sanjay/Library/Caches/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+🔧 Running in DEMO/MOCK mode (no AWS credentials required)
+
+✅ Configuration:
+   - MOCK_MODE: true
+   - API_HOST: 0.0.0.0
+   - API_PORT: 5001
+   - LOG_LEVEL: INFO
+
+🌐 API will be available at: http://0.0.0.0:5001
+🏥 Health check: http://0.0.0.0:5001/health
+
+Press Ctrl+C to stop
+
+2025-10-24 20:43:45,717 - __main__ - INFO - Initializing Bedrock model...
+2025-10-24 20:43:45,718 - __main__ - INFO - Bedrock Model: anthropic.claude-sonnet-4-20250514-v1:0
+2025-10-24 20:43:45,718 - __main__ - INFO - AWS Region: us-east-1
+2025-10-24 20:43:45,719 - __main__ - INFO - ✅ RMM Agent Backend initialized
+2025-10-24 20:43:45,719 - __main__ - INFO - 🔧 MOCK_MODE: True
+2025-10-24 20:43:45,719 - __main__ - INFO - 🌐 API Host: 0.0.0.0:5001
+2025-10-24 20:43:45,719 - __main__ - INFO - 🔒 CORS Origins: ['http://localhost:3000', 'https://deft-vacherin-809e6c.netlify.app']
+2025-10-24 20:43:45,719 - __main__ - INFO - 🛡️ Guardrails: Not configured
+2025-10-24 20:43:45,719 - __main__ - INFO - Starting RMM Agent Backend...
+2025-10-24 20:43:45,719 - __main__ - INFO - Access at: http://0.0.0.0:5001
+2025-10-24 20:43:45,719 - __main__ - INFO - Health check: http://0.0.0.0:5001/health
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-10-24 20:43:45,757 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.0.4:5001
+2025-10-24 20:43:45,758 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 20:43:55,479 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 20:43:55] "GET /health HTTP/1.1" 200 -
+2025-10-24 20:44:16,739 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 20:44:16] "[33mGET / HTTP/1.1[0m" 404 -
+2025-10-24 20:44:17,315 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 20:44:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-10-24 20:45:02,423 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 20:45:02] "[33mGET / HTTP/1.1[0m" 404 -

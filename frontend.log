@@ -1,0 +1,122 @@
+
+> aws-rmm-dashboard@1.0.0 dev
+> NODE_OPTIONS='--max-old-space-size=4096' next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
+ ⚠ Port 3002 is in use, trying 3003 instead.
+ ⚠ Port 3003 is in use, trying 3004 instead.
+  ▲ Next.js 14.2.32
+  - Local:        http://localhost:3004
+
+ ✓ Starting...
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+ ✓ Ready in 1048ms
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+ ○ Compiling / ...
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+ ✓ Compiled / in 2.9s (1127 modules)
+ GET / 200 in 3023ms
+ GET / 200 in 29ms
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+ ✓ Compiled /agents/chat in 412ms (1152 modules)
+ GET /agents/chat/ 200 in 510ms
+ ✓ Compiled in 146ms (577 modules)
+ GET / 200 in 91ms
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+ ✓ Compiled /servers in 200ms (1168 modules)
+ GET /servers/ 200 in 262ms
+ ✓ Compiled /agents in 152ms (1177 modules)
+ GET /agents/ 200 in 200ms
+ GET /agents/ 200 in 50ms
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+ ✓ Compiled /incidents in 235ms (1183 modules)
+ GET /incidents/ 200 in 302ms
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+ ✓ Compiled /analytics in 224ms (1191 modules)
+ GET /analytics/ 200 in 274ms
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+ ○ Compiling /settings ...
+ ✓ Compiled /settings in 568ms (1211 modules)
+Watchpack Error (watcher): Error: EMFILE: too many open files, watch
+ GET /settings/ 200 in 664ms
+ ✓ Compiled in 120ms (587 modules)
+ GET / 200 in 64ms
+ GET /agents/chat/ 200 in 70ms
+ GET /agents/chat/ 200 in 58ms
+ GET /agents/chat/ 200 in 51ms
+ GET /agents/chat/ 200 in 24ms
+ ✓ Compiled /_not-found in 466ms (1201 modules)
+ GET / 404 in 545ms
+ GET /_next/static/webpack/d80e820d498c7c30.webpack.hot-update.json 404 in 185ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /agents/chat/ 200 in 70ms
+ GET /agents/chat/ 200 in 27ms
+ GET / 200 in 99ms
+ GET /agents/chat/ 200 in 33ms

@@ -26,6 +26,19 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* Hide Next.js dev error overlay */
+#__next-build-watcher,
+nextjs-portal,
+[data-nextjs-dialog-overlay],
+[data-nextjs-toast],
+[class*="toast"],
+[class*="Toaster"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
