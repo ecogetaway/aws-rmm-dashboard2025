@@ -1,0 +1,14 @@
+# Core dependencies
+flask==3.0.0
+flask-cors==4.0.0
+flask-sock==0.7.0
+boto3==1.34.0
+python-dotenv==1.0.0
+
+# Phase 2: Strands SDK and Bedrock
+# strands-agents-sdk (will be added when available)
+# anthropic (for Bedrock model integration)
+
+# Utilities
+requests==2.31.0
+

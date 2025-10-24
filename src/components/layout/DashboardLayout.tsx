@@ -13,7 +13,8 @@ import {
   Menu,
   X,
   Brain,
-  Zap
+  Zap,
+  MessageSquare
 } from 'lucide-react'
 
 interface DashboardLayoutProps {
@@ -22,6 +23,7 @@ interface DashboardLayoutProps {
 
 const navigation = [
   { name: 'Overview', href: '/', icon: BarChart3, current: true },
+  { name: 'Agent Console', href: '/agents/chat', icon: MessageSquare, current: false, badge: 'New' },
   { name: 'Servers', href: '/servers', icon: Server, current: false },
   { name: 'AI Agents', href: '/agents', icon: Bot, current: false },
   { name: 'Incidents', href: '/incidents', icon: AlertTriangle, current: false },
@@ -86,14 +88,21 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                   <a
                     key={item.name}
                     href={item.href}
-                    className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
+                    className={`flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                       item.current
                         ? 'bg-primary-50 text-primary-700 border-r-2 border-primary-600'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                     }`}
                   >
-                    <Icon className="w-5 h-5 mr-3" />
-                    {item.name}
+                    <div className="flex items-center">
+                      <Icon className="w-5 h-5 mr-3" />
+                      {item.name}
+                    </div>
+                    {item.badge && (
+                      <span className="px-2 py-0.5 text-xs bg-green-100 text-green-800 rounded-full">
+                        {item.badge}
+                      </span>
+                    )}
                   </a>
                 )
               })}

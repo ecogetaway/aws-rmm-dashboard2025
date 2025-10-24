@@ -1,5 +1,6 @@
 'use client'
 
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Server, Cpu, HardDrive, Wifi, Clock, MapPin } from 'lucide-react'
 import { ServerData } from '@/lib/mockData'
@@ -42,6 +43,8 @@ const getUsageColor = (usage: number) => {
 }
 
 export default function ServerStatus({ servers }: ServerStatusProps) {
+  const [activeFilter, setActiveFilter] = useState<'all' | 'healthy' | 'warning' | 'critical'>('all')
+  const filteredServers = (servers || []).filter(s => activeFilter === 'all' ? true : s.status === activeFilter)
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
       <div className="flex items-center justify-between mb-6">
@@ -65,8 +68,24 @@ export default function ServerStatus({ servers }: ServerStatusProps) {
         </div>
       </div>
 
+      {/* Filters */}
+      <div className="flex items-center gap-2 mb-4">
+        {(['all','healthy','warning','critical'] as const).map(key => (
+          <button
+            key={key}
+            onClick={() => setActiveFilter(key)}
+            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
+              activeFilter === key ? 'bg-blue-600 text-white border-blue-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+            }`}
+            aria-label={`Filter ${key}`}
+          >
+            {key[0].toUpperCase() + key.slice(1)}
+          </button>
+        ))}
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {servers?.map((server, index) => (
+        {filteredServers?.map((server, index) => (
           <motion.div
             key={server.id}
             initial={{ opacity: 0, y: 20 }}

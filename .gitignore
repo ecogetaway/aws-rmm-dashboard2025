@@ -34,3 +34,6 @@ next-env.d.ts
 
 # Cache
 .swc/
+
+# Local Netlify folder
+.netlify

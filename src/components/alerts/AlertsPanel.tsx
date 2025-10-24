@@ -1,11 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { AlertTriangle, TrendingUp, Shield, Eye, Clock, CheckCircle } from 'lucide-react'
+import { AlertTriangle, TrendingUp, Shield, Eye, Clock, CheckCircle, Wand2 } from 'lucide-react'
 import { AlertData } from '@/lib/mockData'
 
 interface AlertsPanelProps {
   alerts: AlertData[]
+  onAcknowledge?: (id: string) => void
+  onAutoRemediate?: (id: string) => void
 }
 
 const getAlertIcon = (type: string) => {
@@ -53,7 +55,7 @@ const getTypeColor = (type: string) => {
   }
 }
 
-export default function AlertsPanel({ alerts }: AlertsPanelProps) {
+export default function AlertsPanel({ alerts, onAcknowledge, onAutoRemediate }: AlertsPanelProps) {
   const sortedAlerts = alerts?.sort((a, b) => 
     new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
   ) || []
@@ -65,7 +67,7 @@ export default function AlertsPanel({ alerts }: AlertsPanelProps) {
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h3 className="text-lg font-semibold text-gray-900">Active Alerts</h3>
+          <h3 className="text-lg font-semibold text-gray-900">Alerts</h3>
           <p className="text-sm text-gray-600">Real-time alerts and notifications</p>
         </div>
         <div className="flex items-center space-x-2">
@@ -135,8 +137,21 @@ export default function AlertsPanel({ alerts }: AlertsPanelProps) {
                     <CheckCircle className="w-4 h-4 text-green-600" />
                   )}
                   {!alert.acknowledged && (
-                    <button className="px-2 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
+                    <button
+                      onClick={() => onAcknowledge && onAcknowledge(alert.id)}
+                      className="px-2 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                      aria-label={`Acknowledge alert ${alert.id}`}
+                    >
                       Acknowledge
+                    </button>
+                  )}
+                  {alert.severity !== 'low' && !alert.acknowledged && (
+                    <button
+                      onClick={() => onAutoRemediate && onAutoRemediate(alert.id)}
+                      className="px-2 py-1 text-xs bg-green-600 text-white rounded hover:bg-green-700 transition-colors flex items-center gap-1"
+                      aria-label={`Trigger auto-remediation for alert ${alert.id}`}
+                    >
+                      <Wand2 className="w-3 h-3" /> Fix
                     </button>
                   )}
                 </div>

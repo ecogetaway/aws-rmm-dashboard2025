@@ -312,10 +312,25 @@ export function updateMockData(currentData: any) {
     averageResponseTime: Math.max(0.1, agent.averageResponseTime + (Math.random() - 0.5) * 0.5)
   }))
 
+  // Extend health timeline with a new point and keep last 24 items
+  const lastPoint = currentData.healthData?.timeline?.[currentData.healthData.timeline.length - 1]
+  const nextPoint = {
+    time: now,
+    overall: Math.max(80, Math.min(100, (lastPoint?.overall ?? 92) + (Math.random() - 0.5) * 2)),
+    cpu: Math.max(10, Math.min(95, (lastPoint?.cpu ?? 50) + (Math.random() - 0.5) * 6)),
+    memory: Math.max(10, Math.min(95, (lastPoint?.memory ?? 60) + (Math.random() - 0.5) * 4)),
+    disk: Math.max(10, Math.min(95, (lastPoint?.disk ?? 45) + (Math.random() - 0.5) * 2)),
+    network: Math.max(5, Math.min(95, (lastPoint?.network ?? 18) + (Math.random() - 0.5) * 5)),
+  }
+  const updatedHealthData = {
+    timeline: [...(currentData.healthData?.timeline ?? []), nextPoint].slice(-24)
+  }
+
   return {
     ...currentData,
     servers: updatedServers,
     agents: updatedAgents,
+    healthData: updatedHealthData,
     lastUpdate: now
   }
 }

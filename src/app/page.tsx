@@ -9,7 +9,7 @@ import IncidentTimeline from '@/components/incidents/IncidentTimeline'
 import ServerStatus from '@/components/servers/ServerStatus'
 import AIAgentStatus from '@/components/agents/AIAgentStatus'
 import AlertsPanel from '@/components/alerts/AlertsPanel'
-import { generateMockData } from '@/lib/mockData'
+import { generateMockData, updateMockData } from '@/lib/mockData'
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true)
@@ -24,6 +24,15 @@ export default function HomePage() {
 
     return () => clearTimeout(timer)
   }, [])
+
+  // Live demo: periodically update mock data
+  useEffect(() => {
+    if (!dashboardData) return
+    const interval = setInterval(() => {
+      setDashboardData((prev: any) => (prev ? updateMockData(prev) : prev))
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [dashboardData])
 
   if (isLoading) {
     return (
@@ -124,7 +133,41 @@ export default function HomePage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <AlertsPanel alerts={dashboardData?.alerts} />
+              <AlertsPanel 
+                alerts={dashboardData?.alerts}
+                onAcknowledge={(id) => {
+                  setDashboardData((prev: any) => {
+                    if (!prev) return prev
+                    return {
+                      ...prev,
+                      alerts: prev.alerts.map((a: any) => a.id === id ? { ...a, acknowledged: true } : a)
+                    }
+                  })
+                }}
+                onAutoRemediate={(id) => {
+                  setDashboardData((prev: any) => {
+                    if (!prev) return prev
+                    const updatedAlerts = prev.alerts.map((a: any) => a.id === id ? { ...a, acknowledged: true, message: a.message + ' • Auto-remediation triggered' } : a)
+                    const newIncident = {
+                      id: `inc-${Math.random().toString(36).slice(2,8)}`,
+                      title: `Auto-remediation initiated for ${id}`,
+                      severity: 'medium',
+                      status: 'resolved',
+                      assignedTo: 'ai_agent',
+                      createdAt: new Date().toISOString(),
+                      resolvedAt: new Date().toISOString(),
+                      description: 'AI agent applied safe remediation for the alert',
+                      affectedSystems: [updatedAlerts.find((a: any) => a.id === id)?.source || 'unknown'],
+                      resolutionTime: 30
+                    }
+                    return {
+                      ...prev,
+                      alerts: updatedAlerts,
+                      incidents: [newIncident, ...prev.incidents]
+                    }
+                  })
+                }}
+              />
             </motion.div>
           </div>
         </div>
