@@ -43,12 +43,17 @@ Autonomous Infrastructure Management Powered by AI
 >
 > "This isn't just another monitoring tool. It's an intelligent system powered by Claude Sonnet 4 that thinks, plans, and acts autonomously."
 
-**[SHOW: Quick animation of agent architecture]**
+**[SHOW: Architecture diagram with data flow]**
+CLIENT INTERFACES → AI AGENTS → AWS SERVICES → DATA LAYER → INFRASTRUCTURE
+
+**NARRATOR:**
+
+> "Our Supervisor Agent orchestrates three specialist agents—RMM Monitor for health checks, Incident Response for root cause analysis, and intelligent routing—all powered by real AWS services."
 
 **KEY FEATURES ON SCREEN:**
-- 🤖 Multi-Agent AI Orchestration
+- 🤖 Multi-Agent AI Orchestration (Strands Framework)
 - 📊 Real-time CloudWatch Integration  
-- 🔧 Autonomous Remediation
+- 🔧 Autonomous Remediation with EC2 & SSM
 - 💬 Natural Language Interface
 - ✅ Human-in-the-Loop Approval
 
@@ -56,13 +61,13 @@ Autonomous Infrastructure Management Powered by AI
 
 ### **[0:50-1:40] Demo Scenario 1: Health Monitoring with AI Analysis** (50 seconds)
 
-**[SCREEN: Navigate to AI Agent Console - /agents/chat]**
+**[SCREEN: Navigate to AI Agent Console]**
 
 **NARRATOR:**
 
-> "Let's see it in action. Here's our AI Agent Console—a natural language interface to your entire infrastructure."
+> "Let's see it in action. From the Agents page, I'll open the AI Agent Console—a natural language interface to your entire infrastructure."
 
-**[ACTION: Click on 'Check health status' suggested prompt]**
+**[ACTION: Navigate to /agents/chat and click on 'Check health status' suggested prompt]**
 
 **NARRATOR:**
 
@@ -72,7 +77,7 @@ Autonomous Infrastructure Management Powered by AI
 
 **NARRATOR:**
 
-> "Watch what happens. The Orchestrator agent routes this to our Monitoring specialist, which then:"
+> "Watch what happens. This is real Amazon Bedrock streaming—not simulated responses. The Orchestrator agent routes this to our Monitoring specialist, which then:"
 
 **[POINT TO SCREEN as each appears]**
 
@@ -80,11 +85,11 @@ Autonomous Infrastructure Management Powered by AI
 2. **"Analyzes CloudWatch metrics in real-time..."** ✓ Tool: analyze_cloudwatch_metrics  
 3. **"And uses Amazon Bedrock's Claude Sonnet 4 to provide intelligent analysis..."**
 
-**[SCREEN: Show full agent response with insights]**
+**[SCREEN: Show full agent response with insights streaming token-by-token]**
 
 **NARRATOR:**
 
-> "Within seconds, we get a comprehensive health report with actionable insights—not just raw data, but intelligent analysis."
+> "Within seconds, we get a comprehensive health report with actionable insights—not just raw data, but intelligent analysis powered by Claude Sonnet 4."
 
 **[HIGHLIGHT on screen]:**
 ```
@@ -92,6 +97,8 @@ Autonomous Infrastructure Management Powered by AI
 📊 Confidence: 87%
 💡 Recommendation: Proactive remediation required
 ```
+
+**NOTE:** The agent is streaming real responses using Amazon Bedrock—this is production-grade AI integration.
 
 ---
 
@@ -139,27 +146,27 @@ Estimated Impact: 30-second downtime
 
 ### **[2:20-2:45] Technical Deep Dive - What Makes This Special** (25 seconds)
 
-**[SCREEN: Show architecture diagram or code snippet]**
+**[SCREEN: Show architecture diagram with data flow]**
 
 **NARRATOR:**
 
 > "Let's talk about what powers this system."
 
-**[SHOW: Architecture animation or slide]**
+**[SHOW: Architecture animation highlighting components]**
 
 **KEY POINTS TO HIGHLIGHT:**
 
 1. **Amazon Bedrock Integration**
-   > "Real-time streaming from Amazon Bedrock with Claude Sonnet 4—no simulated responses, this is production-grade AI."
+   > "Real-time streaming from Amazon Bedrock with Claude Sonnet 4—token-by-token responses, production-grade AI, no simulations."
 
 2. **Strands Agent Framework**
-   > "Multi-agent orchestration using a hierarchical architecture: an Orchestrator routes requests to specialist agents like Monitoring, Incident Response, and Compliance."
+   > "Enterprise-grade multi-agent orchestration: Our Supervisor Agent coordinates RMM Monitor Agent, Incident Response Agent, and intelligent routing—all following the Strands architecture pattern."
 
 3. **AWS Services Integration**
-   > "Deep integration with CloudWatch, EC2, and Systems Manager—real tools, real actions, real infrastructure management."
+   > "Real tool execution with CloudWatch for metrics, EC2 for inventory, and Systems Manager for remediation—deep AWS integration built into every agent action."
 
-4. **Production-Ready Features**
-   > "WebSocket streaming, tool execution tracing, human-in-the-loop workflows, and mock mode for testing—all built for production deployment."
+4. **Production-Ready Architecture**
+   > "WebSocket streaming for real-time updates, comprehensive tool execution traces, human-in-the-loop approvals, and demo mode fallback—built for production deployment and offline demos."
 
 ---
 
@@ -289,6 +296,7 @@ GitHub: [your-repo-link]
 - [ ] Set browser zoom to 100%
 - [ ] Close unnecessary browser tabs
 - [ ] Disable browser extensions that might show notifications
+- [ ] **Note:** Use browser back button to navigate between Agent Console and other pages
 
 ### **Script Preparation**
 
@@ -370,6 +378,9 @@ When showing the dashboard or discussing benefits, reference these metrics:
 ### **If Demo Doesn't Work as Expected:**
 > "Let me show you a different capability..."
 [Have backup demo scenarios ready]
+
+### **Navigation Note:**
+> If navigating between Agent Console and other pages, use the browser back button for smooth transitions during recording.
 
 ---
 
