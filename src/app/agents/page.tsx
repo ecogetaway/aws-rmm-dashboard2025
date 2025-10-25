@@ -1,6 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 import DashboardLayout from '@/components/layout/DashboardLayout';
-import { Bot, Brain, Shield, TrendingUp, Activity, Clock, Zap, CheckCircle, AlertTriangle } from 'lucide-react';
+import { Bot, Brain, Shield, TrendingUp, Activity, Clock, Zap, CheckCircle, AlertTriangle, MessageSquare } from 'lucide-react';
 
 const AgentsPage = () => {
   const agents = [
@@ -111,6 +112,13 @@ const AgentsPage = () => {
             <p className="text-gray-600 mt-2">Monitor and manage your autonomous AI agents powered by Amazon Bedrock</p>
           </div>
           <div className="flex gap-3">
+            <Link 
+              href="/agents/chat"
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition-colors flex items-center gap-2"
+            >
+              <MessageSquare className="w-5 h-5" />
+              <span className="font-medium">Chat with Agents</span>
+            </Link>
             <div className="bg-white px-4 py-2 rounded-lg shadow border">
               <span className="text-sm text-gray-500">Active Agents</span>
               <p className="text-2xl font-bold text-green-600">{agents.filter(a => a.status === 'active').length}</p>
