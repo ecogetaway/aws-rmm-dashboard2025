@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 import { AgentChat } from '@/components/agents/AgentChat';
 import { AgentActivity } from '@/components/agents/AgentActivity';
 import { ActionsPanel, ActionProposal } from '@/components/agents/ActionsPanel';
@@ -90,8 +92,16 @@ export default function AgentChatPage() {
           </div>
         </div>
 
-        {/* Header */}
+        {/* Header with Back Navigation */}
         <div className="mb-6">
+          <Link 
+            href="/agents"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-4 transition-colors"
+            aria-label="Back to Agents Overview"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span className="text-sm font-medium">Back to Agents Overview</span>
+          </Link>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">AI Agent Console</h1>
           <p className="text-gray-600">
             Interact with the AI agent, monitor tool executions, and approve autonomous actions
