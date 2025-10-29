@@ -120,3 +120,23 @@ Watchpack Error (watcher): Error: EMFILE: too many open files, watch
  GET /agents/chat/ 200 in 27ms
  GET / 200 in 99ms
  GET /agents/chat/ 200 in 33ms
+node:internal/child_process:512
+      this.emit('error', new ErrnoException(err, 'kill'));
+                         ^
+
+Error: kill EPERM
+    at ChildProcess.kill (node:internal/child_process:512:26)
+    at handleSessionStop (/Users/sanjay/aws-rmm-frontend-demo/node_modules/next/dist/cli/next-dev.js:85:51)
+    at process.<anonymous> (/Users/sanjay/aws-rmm-frontend-demo/node_modules/next/dist/cli/next-dev.js:131:27)
+    at process.emit (node:events:507:28)
+Emitted 'error' event on ChildProcess instance at:
+    at ChildProcess.kill (node:internal/child_process:512:12)
+    at handleSessionStop (/Users/sanjay/aws-rmm-frontend-demo/node_modules/next/dist/cli/next-dev.js:85:51)
+    at process.<anonymous> (/Users/sanjay/aws-rmm-frontend-demo/node_modules/next/dist/cli/next-dev.js:131:27)
+    at process.emit (node:events:507:28) {
+  errno: -1,
+  code: 'EPERM',
+  syscall: 'kill'
+}
+
+Node.js v24.2.0

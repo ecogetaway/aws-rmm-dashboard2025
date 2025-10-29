@@ -11,7 +11,10 @@
     "build:netlify": "cp next.config.netlify.js next.config.js && next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:netlify": "npm run build:netlify"
+    "deploy:netlify": "npm run build:netlify",
+    "build:static": "next build",
+    "deploy:surge": "npm run build:static && npx --yes surge ./out",
+    "deploy:surge:domain": "npm run build:static && npx --yes surge ./out $SURGE_DOMAIN"
   },
   "dependencies": {
     "next": "^14.0.0",
